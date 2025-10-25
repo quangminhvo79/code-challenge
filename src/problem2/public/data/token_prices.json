@@ -1,0 +1,72 @@
+[
+  {
+    "currency": "BLUR",
+    "date": "2023-08-29T07:10:40.000Z",
+    "price": 0.2081,
+    "token_address": "0x5283D291DBCF85356A21bA090E6db59121208b44",
+    "balance": 150
+  },
+  {
+    "currency": "BUSD",
+    "date": "2023-08-29T07:10:40.000Z",
+    "price": 0.9992,
+    "token_address": "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+    "balance": 200
+  },
+  {
+    "currency": "USDT",
+    "date": "2023-08-29T07:10:30.000Z",
+    "price": 1.0000,
+    "token_address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "balance": 300
+  },
+  {
+    "currency": "ETH",
+    "date": "2023-08-29T07:10:52.000Z",
+    "price": 1645.9337,
+    "token_address": "0x0000000000000000000000000000000000000000",
+    "balance": 3
+  },
+  {
+    "currency": "GMX",
+    "date": "2023-08-29T07:10:40.000Z",
+    "price": 36.3451,
+    "token_address": "0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a",
+    "balance": 1500
+  },
+  {
+    "currency": "LUNA",
+    "date": "2023-08-29T07:10:40.000Z",
+    "price": 0.0096,
+    "token_address": "0xd2877702675e6cEb975b4A1dFf9fb7BAF4C91ea9",
+    "balance": 15000000
+  },
+  {
+    "currency": "USDC",
+    "date": "2023-08-29T07:10:40.000Z",
+    "price": 0.9898,
+    "token_address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "balance": 1400
+  },
+  {
+    "currency": "OKB",
+    "date": "2023-08-29T07:10:40.000Z",
+    "price": 42.9756,
+    "token_address": "0x75231F58b43240C9718Dd58B4967c5114342a86c",
+    "balance": 400
+  },
+  {
+    "currency": "WBTC",
+    "date": "2023-08-29T07:10:52.000Z",
+    "price": 26002.8220,
+    "token_address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "balance": 10
+  },
+  {
+    "currency": "SOL",
+    "date": "2023-08-29T07:10:50.000Z",
+    "price": 188.3452,
+    "token_address": "So11111111111111111111111111111111111111112",
+    "balance": 250
+  }
+]
