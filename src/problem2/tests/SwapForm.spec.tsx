@@ -118,6 +118,7 @@ describe('SwapForm Component', () => {
   describe('Amount Input and Calculation', () => {
     test('should accept numeric input in selling amount', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
 
       await sellingInput.fill('100')
@@ -126,6 +127,7 @@ describe('SwapForm Component', () => {
 
     test('should calculate buying amount when selling amount is entered', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingDropdown = page.getByTestId('sellingTokenDropdown')
       const buyingDropdown = page.getByTestId('buyingTokenDropdown')
       const sellingInput = page.getByTestId('sellingTokenInput')
@@ -141,6 +143,7 @@ describe('SwapForm Component', () => {
 
     test('should calculate selling amount when buying amount is entered', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
       const buyingInput = page.getByTestId('buyingTokenInput')
 
@@ -152,6 +155,7 @@ describe('SwapForm Component', () => {
 
     test('should accept decimal values', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
 
       await sellingInput.fill('123.456')
@@ -160,6 +164,7 @@ describe('SwapForm Component', () => {
 
     test('should limit decimal places to 6', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
 
       await sellingInput.fill('123.4567890')
@@ -169,6 +174,7 @@ describe('SwapForm Component', () => {
 
     test('should not accept non-numeric characters', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
 
       await sellingInput.fill('abc')
@@ -177,6 +183,7 @@ describe('SwapForm Component', () => {
 
     test('should display conversion rate when amounts are entered', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
 
       await sellingInput.fill('100')
@@ -187,6 +194,7 @@ describe('SwapForm Component', () => {
 
     test('should display USD value for selling amount', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingDropdown = page.getByTestId('sellingTokenDropdown')
       const sellingInput = page.getByTestId('sellingTokenInput')
 
@@ -246,6 +254,7 @@ describe('SwapForm Component', () => {
 
     test('should disable swap button when selling amount is 0', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
       const swapButton = page.getByRole('button', { name: 'Swap' })
 
@@ -257,6 +266,7 @@ describe('SwapForm Component', () => {
   describe('Switch Tokens Functionality', () => {
     test('should switch selling and buying tokens', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingDropdown = page.getByTestId('sellingTokenDropdown')
       const buyingDropdown = page.getByTestId('buyingTokenDropdown')
       const switchButton = page.getByTestId('switchTokens')
@@ -273,6 +283,7 @@ describe('SwapForm Component', () => {
 
     test('should recalculate amounts when switching tokens', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingDropdown = page.getByTestId('sellingTokenDropdown')
       const buyingDropdown = page.getByTestId('buyingTokenDropdown')
       const sellingInput = page.getByTestId('sellingTokenInput')
@@ -293,6 +304,7 @@ describe('SwapForm Component', () => {
 
     test('should update balance display when switching tokens', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingDropdown = page.getByTestId('sellingTokenDropdown')
       const buyingDropdown = page.getByTestId('buyingTokenDropdown')
       const switchButton = page.getByTestId('switchTokens')
@@ -310,6 +322,7 @@ describe('SwapForm Component', () => {
   describe('Balance Validation', () => {
     test('should show error when selling amount exceeds balance', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingDropdown = page.getByTestId('sellingTokenDropdown')
       const sellingInput = page.getByTestId('sellingTokenInput')
 
@@ -323,6 +336,7 @@ describe('SwapForm Component', () => {
 
     test('should disable swap button when balance is insufficient', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingDropdown = page.getByTestId('sellingTokenDropdown')
       const sellingInput = page.getByTestId('sellingTokenInput')
       const swapButton = page.getByRole('button', { name: 'Swap' })
@@ -335,6 +349,7 @@ describe('SwapForm Component', () => {
 
     test('should not show error when selling amount is within balance', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingDropdown = page.getByTestId('sellingTokenDropdown')
       const sellingInput = page.getByTestId('sellingTokenInput')
 
@@ -350,6 +365,7 @@ describe('SwapForm Component', () => {
   describe('Edge Cases', () => {
     test('should handle empty string input', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
       const buyingInput = page.getByTestId('buyingTokenInput')
 
@@ -362,6 +378,7 @@ describe('SwapForm Component', () => {
 
     test('should handle very small amounts', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
 
       await sellingInput.fill('0.000001')
@@ -370,6 +387,7 @@ describe('SwapForm Component', () => {
 
     test('should handle very large amounts', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
 
       await sellingInput.fill('999999999')
@@ -378,6 +396,7 @@ describe('SwapForm Component', () => {
 
     test('should not accept leading zeros', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
 
       await sellingInput.fill('00')
@@ -387,6 +406,7 @@ describe('SwapForm Component', () => {
 
     test('should accept single zero', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
 
       await sellingInput.fill('0')
@@ -395,6 +415,7 @@ describe('SwapForm Component', () => {
 
     test('should accept zero followed by decimal', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingInput = page.getByTestId('sellingTokenInput')
 
       await sellingInput.fill('0.5')
@@ -405,6 +426,7 @@ describe('SwapForm Component', () => {
   describe('Integration Test - Complete Flow', () => {
     test('should complete a full swap flow', async () => {
       renderSwapForm()
+      await expect.element(page.getByTestId("balance")).toBeVisible()
       const sellingDropdown = page.getByTestId('sellingTokenDropdown')
       const buyingDropdown = page.getByTestId('buyingTokenDropdown')
       const sellingInput = page.getByTestId('sellingTokenInput')

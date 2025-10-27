@@ -7,20 +7,23 @@ export const useTokens = (sellingToken?: Token, buyingToken?: Token) => {
   const { data: tokens = [] } = useQuery<Token[]>({
     queryKey: ['tokens'],
     queryFn: async () => {
-      return await fetch("/data/token_prices.json")
-        .then((res) => res.json())
-        .then((data) => {
-          const _tokens = data.map((token) => {
-            token.price = new Decimal(token.price);
-            token.balance = new Decimal(token.balance);
-            return token;
-          });
-          return _tokens
-        })
-        .catch((err) => {
-          console.error("Error loading tokens:", err)
-          return [];
-        });
+      return new Promise<Token[]>((resolve) => {
+        setTimeout(async () => {
+          try {
+            const response = await fetch("/data/token_prices.json");
+            const data = await response.json();
+            const _tokens = data.map((token) => {
+              token.price = new Decimal(token.price);
+              token.balance = new Decimal(token.balance);
+              return token;
+            });
+            resolve(_tokens);
+          } catch (err) {
+            console.error("Error loading tokens:", err);
+            resolve([]);
+          }
+        }, 1000);
+      });
     },
     refetchOnWindowFocus: false,
   })

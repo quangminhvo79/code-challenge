@@ -137,7 +137,7 @@ const View = ({
         </div>
       )}
 
-      {sellingAmount && buyingAmount && (
+      {sellingToken && buyingToken && (
         <div className="bg-gray-800/50 rounded-lg p-3 mb-4 text-sm">
           <div className="flex justify-between items-center">
             <span className="text-gray-400">Rate</span>

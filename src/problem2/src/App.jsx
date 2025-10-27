@@ -3,6 +3,7 @@ import { WalletProvider } from '@/contexts/walletContext';
 import WatchList from './components/WatchList';
 import SwapForm from './components/SwapForm';
 import TokenInfo from './components/TokenInfo';
+import Loading from './components/Loading';
 import {
   QueryClient,
   QueryClientProvider,
@@ -34,7 +35,7 @@ const App = () => {
               </div>
             </div>
           </header>
-
+          <Loading />
           <WatchList />
           <main className="relative z-10 max-w-7xl mx-auto px-4 py-8">
             <div className="max-w-md mx-auto">
